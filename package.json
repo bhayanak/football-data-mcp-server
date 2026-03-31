@@ -1,0 +1,29 @@
+{
+  "name": "football-data-mcp-monorepo",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm --filter football-data-mcp-server run dev",
+    "test": "pnpm -r run test",
+    "coverage": "pnpm --filter football-data-mcp-server run test:coverage",
+    "lint": "pnpm -r run lint",
+    "lint:fix": "pnpm -r run lint:fix",
+    "typecheck": "pnpm -r run typecheck",
+    "format": "prettier --check \"packages/**/*.ts\"",
+    "format:fix": "prettier --write \"packages/**/*.ts\"",
+    "package": "pnpm -r run package",
+    "validate": "pnpm run typecheck && pnpm run lint && pnpm run test && pnpm run format",
+    "ci": "pnpm run typecheck && pnpm run lint && pnpm run coverage && pnpm run format && pnpm run build"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

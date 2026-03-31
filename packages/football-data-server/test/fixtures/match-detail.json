@@ -1,0 +1,33 @@
+{
+  "id": 12345,
+  "competition": {
+    "id": 2021,
+    "name": "Premier League",
+    "code": "PL",
+    "type": "LEAGUE",
+    "emblem": "",
+    "area": { "id": 2072, "name": "England", "code": "ENG", "flag": "" }
+  },
+  "season": {
+    "id": 2287,
+    "startDate": "2024-08-16",
+    "endDate": "2025-05-25",
+    "currentMatchday": 15,
+    "winner": null
+  },
+  "utcDate": "2024-12-14T15:00:00Z",
+  "status": "FINISHED",
+  "matchday": 15,
+  "stage": "REGULAR_SEASON",
+  "homeTeam": { "id": 57, "name": "Arsenal FC", "shortName": "Arsenal", "tla": "ARS", "crest": "" },
+  "awayTeam": { "id": 62, "name": "Everton FC", "shortName": "Everton", "tla": "EVE", "crest": "" },
+  "score": {
+    "winner": "HOME_TEAM",
+    "duration": "REGULAR",
+    "fullTime": { "home": 2, "away": 1 },
+    "halfTime": { "home": 1, "away": 1 }
+  },
+  "referees": [
+    { "id": 11, "name": "Michael Oliver", "type": "REFEREE", "nationality": "England" }
+  ]
+}

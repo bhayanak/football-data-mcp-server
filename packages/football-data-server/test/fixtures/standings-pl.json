@@ -1,0 +1,56 @@
+{
+  "competition": {
+    "id": 2021,
+    "name": "Premier League",
+    "code": "PL",
+    "type": "LEAGUE",
+    "emblem": "https://crests.football-data.org/PL.png",
+    "area": { "id": 2072, "name": "England", "code": "ENG", "flag": "" }
+  },
+  "season": {
+    "id": 2287,
+    "startDate": "2024-08-16",
+    "endDate": "2025-05-25",
+    "currentMatchday": 15,
+    "winner": null
+  },
+  "standings": [
+    {
+      "stage": "REGULAR_SEASON",
+      "type": "TOTAL",
+      "table": [
+        {
+          "position": 1,
+          "team": { "id": 64, "name": "Liverpool FC", "shortName": "Liverpool", "tla": "LIV", "crest": "" },
+          "playedGames": 15,
+          "won": 12,
+          "draw": 2,
+          "lost": 1,
+          "points": 38,
+          "goalsFor": 36,
+          "goalsAgainst": 12,
+          "goalDifference": 24,
+          "form": "W,W,W,W,W"
+        },
+        {
+          "position": 2,
+          "team": { "id": 57, "name": "Arsenal FC", "shortName": "Arsenal", "tla": "ARS", "crest": "" },
+          "playedGames": 15,
+          "won": 10,
+          "draw": 4,
+          "lost": 1,
+          "points": 34,
+          "goalsFor": 32,
+          "goalsAgainst": 14,
+          "goalDifference": 18,
+          "form": "W,W,D,W,W"
+        }
+      ]
+    },
+    {
+      "stage": "REGULAR_SEASON",
+      "type": "HOME",
+      "table": []
+    }
+  ]
+}

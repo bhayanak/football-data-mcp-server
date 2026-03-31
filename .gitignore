@@ -1,0 +1,12 @@
+node_modules/
+dist/
+*.vsix
+.env
+coverage/
+.DS_Store
+*.tsbuildinfo
+.idea/
+*.tgz
+.DS_Store
+*.md
+!README.md

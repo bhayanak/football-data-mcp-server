@@ -1,0 +1,53 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Build & Test (Node ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Typecheck
+        run: pnpm run typecheck
+      - name: Lint
+        run: pnpm run lint
+      - name: Format check
+        run: pnpm run format
+      - name: Test with coverage
+        run: pnpm run coverage
+      - name: Build
+        run: pnpm run build
+      - name: Package server
+        run: pnpm --filter football-data-mcp-server run package
+      - name: Package extension
+        run: pnpm --filter football-data-mcp-extension run package
+      - name: Upload server artifact
+        if: matrix.node-version == 20
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-data-mcp-server
+          path: packages/football-data-server/football-data-mcp-server-*.tgz
+      - name: Upload extension artifact
+        if: matrix.node-version == 20
+        uses: actions/upload-artifact@v4
+        with:
+          name: football-data-mcp-extension
+          path: packages/football-data-vscode-extension/football-data-mcp-extension-*.vsix

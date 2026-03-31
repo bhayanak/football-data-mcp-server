@@ -1,0 +1,124 @@
+{
+  "name": "football-data-mcp-extension",
+  "displayName": "Football Data MCP Server",
+  "description": "VS Code extension providing football/soccer data MCP server for AI assistants — live scores, standings, teams, players via football-data.org",
+  "version": "0.1.0",
+  "publisher": "bhayanak",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "keywords": [
+    "mcp",
+    "mcp server",
+    "ai",
+    "copilot",
+    "football",
+    "soccer",
+    "premier-league",
+    "la-liga",
+    "bundesliga",
+    "serie-a",
+    "champions-league",
+    "live-scores",
+    "standings",
+    "sports"
+  ],
+  "icon": "logo.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhayanak/football-data-mcp-server"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "extensionDependencies": [],
+  "contributes": {
+    "configuration": {
+      "title": "Football Data MCP",
+      "properties": {
+        "footballDataMcp.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API token from football-data.org (required). Get one free at https://www.football-data.org/client/register",
+          "order": 1
+        },
+        "footballDataMcp.baseUrl": {
+          "type": "string",
+          "default": "https://api.football-data.org/v4",
+          "description": "Football-Data API base URL",
+          "order": 2
+        },
+        "footballDataMcp.cacheTtlMs": {
+          "type": "number",
+          "default": 60000,
+          "description": "Cache TTL in milliseconds for general data (default: 60000 = 1 minute)",
+          "order": 3
+        },
+        "footballDataMcp.standingsTtlMs": {
+          "type": "number",
+          "default": 300000,
+          "description": "Cache TTL in milliseconds for standings data (default: 300000 = 5 minutes)",
+          "order": 4
+        },
+        "footballDataMcp.cacheMaxSize": {
+          "type": "number",
+          "default": 100,
+          "description": "Maximum number of cached API responses",
+          "order": 5
+        },
+        "footballDataMcp.timeoutMs": {
+          "type": "number",
+          "default": 10000,
+          "description": "HTTP request timeout in milliseconds",
+          "order": 6
+        },
+        "footballDataMcp.rateLimit": {
+          "type": "number",
+          "default": 10,
+          "description": "Maximum API requests per minute (free tier = 10)",
+          "order": 7
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "footballDataMcp.showHealth",
+        "title": "Football Data MCP: Show Server Health"
+      },
+      {
+        "command": "footballDataMcp.restart",
+        "title": "Football Data MCP: Restart MCP Server"
+      }
+    ],
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "football-data-mcp",
+        "label": "Football Data"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "node build.cjs",
+    "typecheck": "tsc --noEmit",
+    "lint": "echo 'No lint configured for extension'",
+    "lint:fix": "echo 'No lint configured for extension'",
+    "test": "echo 'Extension tests run via VS Code test runner'",
+    "package": "npx @vscode/vsce package --no-dependencies --allow-missing-repository -o football-data-mcp-extension-$(node -p \"require('./package.json').version\").vsix"
+  },
+  "dependencies": {
+    "football-data-mcp-server": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.99.0",
+    "@types/node": "^20.17.57",
+    "@vscode/vsce": "^3.4.2",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.8.3"
+  }
+}

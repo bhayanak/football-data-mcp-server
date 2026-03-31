@@ -1,0 +1,29 @@
+{
+  "id": 57,
+  "name": "Arsenal FC",
+  "shortName": "Arsenal",
+  "tla": "ARS",
+  "crest": "https://crests.football-data.org/57.png",
+  "address": "75 Drayton Park London N5 1BU",
+  "website": "https://www.arsenal.com",
+  "founded": 1886,
+  "venue": "Emirates Stadium",
+  "coach": {
+    "id": 11,
+    "name": "Mikel Arteta",
+    "firstName": "Mikel",
+    "lastName": "Arteta",
+    "dateOfBirth": "1982-03-26",
+    "nationality": "Spain"
+  },
+  "squad": [
+    { "id": 101, "name": "David Raya", "firstName": "David", "lastName": "Raya", "dateOfBirth": "1995-09-15", "nationality": "Spain", "position": "Goalkeeper", "shirtNumber": 22 },
+    { "id": 102, "name": "William Saliba", "firstName": "William", "lastName": "Saliba", "dateOfBirth": "2001-03-24", "nationality": "France", "position": "Defence", "shirtNumber": 2 },
+    { "id": 103, "name": "Declan Rice", "firstName": "Declan", "lastName": "Rice", "dateOfBirth": "1999-01-14", "nationality": "England", "position": "Midfield", "shirtNumber": 41 },
+    { "id": 104, "name": "Bukayo Saka", "firstName": "Bukayo", "lastName": "Saka", "dateOfBirth": "2001-09-05", "nationality": "England", "position": "Offence", "shirtNumber": 7 }
+  ],
+  "runningCompetitions": [
+    { "id": 2021, "name": "Premier League", "code": "PL", "type": "LEAGUE", "emblem": "" },
+    { "id": 2001, "name": "Champions League", "code": "CL", "type": "CUP", "emblem": "" }
+  ]
+}

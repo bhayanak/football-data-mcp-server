@@ -1,0 +1,15 @@
+export const COMPETITION_CODES: Record<string, string> = {
+  PL: 'Premier League',
+  PD: 'La Liga',
+  BL1: 'Bundesliga',
+  SA: 'Serie A',
+  FL1: 'Ligue 1',
+  CL: 'Champions League',
+  ELC: 'Championship',
+  PPL: 'Primeira Liga',
+  DED: 'Eredivisie',
+  BSA: 'Série A (Brazil)',
+  WC: 'FIFA World Cup',
+  EC: 'European Championship',
+  CLI: 'Copa Libertadores',
+}
