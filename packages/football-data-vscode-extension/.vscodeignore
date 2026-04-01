@@ -2,5 +2,5 @@ src/
 tsconfig.json
 build.cjs
 node_modules/
-*.map
+**/*.map
 .gitignore
