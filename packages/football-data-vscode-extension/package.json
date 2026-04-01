@@ -1,7 +1,7 @@
 {
   "name": "football-data-mcp-extension",
   "displayName": "Football Data MCP Server",
-  "description": "VS Code extension providing football/soccer data MCP server for AI assistants — live scores, standings, teams, players via football-data.org",
+  "description": "VS Code extension providing football/soccer data MCP server for AI assistants. Bundles a Node.js MCP server (dist/server.js) run as a child process via process.execPath. No external binaries are downloaded or executed. All code is included in the extension package.",
   "version": "0.1.0",
   "publisher": "bhayanak",
   "engines": {
@@ -109,7 +109,7 @@
     "lint": "echo 'No lint configured for extension'",
     "lint:fix": "echo 'No lint configured for extension'",
     "test": "echo 'Extension tests run via VS Code test runner'",
-    "package": "npx @vscode/vsce package --no-dependencies --allow-missing-repository -o football-data-mcp-extension-$(node -p \"require('./package.json').version\").vsix"
+    "package": "npx @vscode/vsce package --no-dependencies -o football-data-mcp-extension-$(node -p \"require('./package.json').version\").vsix"
   },
   "dependencies": {
     "football-data-mcp-server": "workspace:*"

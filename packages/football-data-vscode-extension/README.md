@@ -75,6 +75,14 @@ Once installed and configured, your AI assistant can use these 9 tools:
 
 ---
 
+## 🔒 How It Works
+
+This extension bundles a Node.js MCP server (`dist/server.js`) and runs it as a child process using `process.execPath` (the same Node.js runtime that VS Code uses). It does **not** download or execute any external binaries. All code is included in the extension package.
+
+The server communicates with AI assistants (like GitHub Copilot) via the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) over stdio.
+
+---
+
 ## ⚖️ License
 
-[MIT](../../LICENSE)
+[MIT](LICENSE)

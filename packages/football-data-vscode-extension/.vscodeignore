@@ -1,6 +1,11 @@
-src/
-tsconfig.json
-build.cjs
-node_modules/
-**/*.map
-.gitignore
+# Exclude everything, then include only what we need
+**
+
+# Include only the essentials
+!dist/extension.js
+!dist/server.js
+!package.json
+!logo.png
+!README.md
+!CHANGELOG.md
+!LICENSE
